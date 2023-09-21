@@ -1,4 +1,4 @@
-FROM node:14.17.1 as build
+FROM node:20 as build
 ARG BUILD_CONTEXT
 
 CMD ["bash", "-c", "yarn install && npx browserslist@latest --update-db"]
