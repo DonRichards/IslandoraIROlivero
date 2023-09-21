@@ -1,0 +1,79 @@
+/**
+ * @file
+ * Debug styles.
+ */
+
+@import "../base/variables.pcss.css";
+
+.islandorairolivero-debug {
+  position: fixed;
+  inset-block-end: 0;
+  inset-inline-end: 0;
+  overflow: auto;
+  max-width: 100%;
+  padding-block: var(--sp);
+  padding-inline-start: var(--sp1-5);
+  padding-inline-end: var(--sp1-5);
+  user-select: none;
+  color: var(--color--white);
+  border: solid 1px transparent;
+  background-color: rgba(0, 0, 0, 0.5);
+
+  & a {
+    color: inherit;
+  }
+
+  & label {
+    width: 300px;
+    margin-block-start: 5px;
+    padding: 5px 0;
+    cursor: pointer;
+    vertical-align: top;
+    font-size: 18px;
+  }
+
+  & input[type="checkbox"] {
+    margin-block-start: 10px;
+    margin-inline-end: 10px;
+    cursor: pointer;
+  }
+
+  & .description {
+    margin-block-start: var(--sp);
+  }
+}
+
+.islandorairolivero-debug__row {
+  display: flex;
+}
+
+.islandorairolivero-debug__close {
+  position: absolute;
+  inset-block-start: 0;
+  inset-inline-end: 0;
+  display: block;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  text-indent: -999px;
+  border: 0;
+  background: transparent;
+
+  &:before,
+  &:after {
+    position: absolute;
+    /* stylelint-disable csstools/use-logical */
+    top: 50%;
+    left: 50%;
+    /* stylelint-enable csstools/use-logical */
+    width: 18px;
+    height: 3px;
+    content: "";
+    transform: translate(-50%, -50%) rotate(45deg);
+    background-color: var(--color--white);
+  }
+
+  &:after {
+    transform: translate(-50%, -50%) rotate(-45deg);
+  }
+}
